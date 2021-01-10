@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Classifying  the type of disease</title>
+  
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+ 
+ 
+</head>
+
+<body>
+
+
+
+ <div class="login" >
+	<h1>Diagnosis of erythemato-Squamous Diseases</h1>
+	<br>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="/predict" method="post">
+	
+    	<input type="text" name="erythema" placeholder="erythema" required="required" />
+        <input type="text" name="scaling" placeholder="scaling" required="required" />
+		<input type="text" name="definite_borders" placeholder="definite borders" required="required" />
+        <input type="text" name="itching" placeholder="itching" required="required" />
+		<input type="text" name="koebner_phenomenon" placeholder="koebner phenomenon" required="required" />
+        <input type="text" name="polygonal_papules" placeholder="polygonal papules" required="required" />
+		<input type="text" name="follicular_papules" placeholder="follicular papules" required="required" />
+        <input type="text" name="oral_mucosal_involvement" placeholder="oral mucosal involvement" required="required" />
+		<input type="text" name="knee_and_elbow_involvement" placeholder="knee and elbow involvement" required="required" />
+        <input type="text" name="scalp_involvement" placeholder="scalp involvement" required="required" />
+		<input type="text" name="family_history" placeholder="family history" required="required" />
+		<input type="text" name="Age" placeholder="Age" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">classify</button>
+    </form>
+
+   <br>
+   <br>
+   {{ Disease_type}}
+
+ </div>
+
+
+</body>
+</html>
